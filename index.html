@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Carte</title>
+  <meta name="description" content="Consultez notre carte des plats et notre carte des boissons.">
+  <style>
+    :root {
+      --bg: #1a1410;
+      --card: #241c16;
+      --accent: #c9a24b;
+      --text: #f3ece1;
+      --muted: #b8a98f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Georgia", "EB Garamond", serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+      text-align: center;
+    }
+    header { margin-bottom: 2.5rem; }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .subtitle {
+      color: var(--muted);
+      margin-top: 0.75rem;
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-style: italic;
+    }
+    .rule {
+      width: 64px;
+      height: 2px;
+      background: var(--accent);
+      margin: 1.25rem auto 0;
+      border: none;
+    }
+    .cards {
+      display: grid;
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 640px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 560px) {
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+    .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid rgba(201, 162, 75, 0.35);
+      border-radius: 14px;
+      padding: 2.25rem 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover, .card:focus {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card .emoji { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+    .card .label {
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .card .go {
+      display: block;
+      margin-top: 0.6rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+    footer {
+      margin-top: 3rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Notre Carte</h1>
+    <p class="subtitle">Bienvenue — choisissez votre carte</p>
+    <hr class="rule">
+  </header>
+
+  <main class="cards">
+    <a class="card" href="plats.html">
+      <span class="emoji">🍽️</span>
+      <span class="label">Les Plats</span>
+      <span class="go">Voir la carte &rsaquo;</span>
+    </a>
+    <a class="card" href="boissons.html">
+      <span class="emoji">🍷</span>
+      <span class="label">Les Boissons</span>
+      <span class="go">Voir la carte &rsaquo;</span>
+    </a>
+  </main>
+
+  <footer>Carte mise à jour &mdash; bon appétit</footer>
+</body>
+</html>
